@@ -1,8 +1,14 @@
 
 import { ChevronDown } from 'lucide-react';
 import { ThreeDPhotoCarousel } from '@/components/ui/3d-carousel';
+import { useEffect } from 'react';
+import { renderCanvas } from '@/components/ui/canvas';
 
 const Hero = () => {
+  useEffect(() => {
+    renderCanvas();
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grain">
       <div className="absolute inset-0 z-0">
@@ -43,6 +49,11 @@ const Hero = () => {
           </a>
         </div>
       </div>
+
+      <canvas
+        className="pointer-events-none absolute inset-0 z-20"
+        id="canvas"
+      ></canvas>
     </section>
   );
 };
