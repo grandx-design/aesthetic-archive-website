@@ -1,5 +1,6 @@
 
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 const projects = [
   {
@@ -50,32 +51,44 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div 
             key={project.id}
-            className="relative overflow-hidden rounded-2xl card-hover bg-white shadow-md animate-fade-in"
+            className="relative overflow-hidden rounded-2xl card-hover animate-fade-in"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="img-hover-zoom h-64 relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 z-10"></div>
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover"
-                loading="lazy"
+            <div className="relative p-2 rounded-2xl">
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+                borderWidth={3}
               />
-            </div>
-            
-            <div className="p-6">
-              <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full bg-secondary text-primary mb-3">
-                {project.category}
-              </span>
-              <h3 className="text-xl font-display font-bold mb-2">{project.title}</h3>
-              <p className="text-muted-foreground mb-4">{project.description}</p>
-              
-              <a 
-                href={project.link}
-                className="inline-flex items-center text-sm font-medium text-primary"
-              >
-                View Project <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
+              <div className="relative rounded-xl overflow-hidden bg-white shadow-md">
+                <div className="img-hover-zoom h-64 relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 z-10"></div>
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <span className="text-xs font-semibold inline-block py-1 px-2 rounded-full bg-secondary text-primary mb-3">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl font-display font-bold mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  
+                  <a 
+                    href={project.link}
+                    className="inline-flex items-center text-sm font-medium text-primary"
+                  >
+                    View Project <ArrowRight className="ml-1 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         ))}
