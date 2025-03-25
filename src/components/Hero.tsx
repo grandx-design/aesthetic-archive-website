@@ -1,16 +1,17 @@
 
 import { ChevronDown } from 'lucide-react';
+import { ThreeDPhotoCarousel } from '@/components/ui/3d-carousel';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden grain">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-100 rounded-full opacity-20 blur-[100px] animate-pulse-subtle"></div>
         <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-violet-100 rounded-full opacity-20 blur-[80px] animate-float"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 pt-20 md:pt-0">
-        <div className="text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 pt-20 md:pt-0 flex flex-col items-center">
+        <div className="text-center mb-8">
           <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight animate-fade-in">
             Creating <span className="relative">
               Digital Experiences
@@ -30,6 +31,10 @@ const Hero = () => {
               Contact Me
             </a>
           </div>
+        </div>
+        
+        <div className="w-full max-w-6xl animate-fade-in animate-delay-400">
+          <ThreeDPhotoCarousel />
         </div>
         
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
