@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Mail, MessageSquare, Send } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import { GradientButton } from '@/components/ui/gradient-button';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -128,10 +129,10 @@ const Contact = () => {
                 />
               </div>
               
-              <button
+              <GradientButton
                 type="submit"
                 disabled={isSubmitting}
-                className="filled-button flex items-center justify-center w-full md:w-auto disabled:opacity-70"
+                className="flex items-center justify-center"
               >
                 {isSubmitting ? (
                   'Sending...'
@@ -141,7 +142,7 @@ const Contact = () => {
                     <Send className="ml-2 h-4 w-4" />
                   </>
                 )}
-              </button>
+              </GradientButton>
             </form>
           </div>
         </div>

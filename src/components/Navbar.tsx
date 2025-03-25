@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { MenuIcon, XIcon } from 'lucide-react';
+import { GradientButton } from '@/components/ui/gradient-button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,8 +55,8 @@ const Navbar = () => {
           
           {/* Contact Button (Desktop) */}
           <div className="hidden md:block">
-            <a href="#contact" className="filled-button">
-              Get in Touch
+            <a href="#contact">
+              <GradientButton>Get in Touch</GradientButton>
             </a>
           </div>
           
@@ -102,9 +103,9 @@ const Navbar = () => {
               Contact
             </a>
             
-            <div className="pt-2">
-              <a href="#contact" className="filled-button block text-center mx-3" onClick={toggleMenu}>
-                Get in Touch
+            <div className="pt-2 px-3">
+              <a href="#contact" onClick={toggleMenu}>
+                <GradientButton className="w-full justify-center">Get in Touch</GradientButton>
               </a>
             </div>
           </div>
