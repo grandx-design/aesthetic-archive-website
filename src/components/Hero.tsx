@@ -83,7 +83,7 @@ const Hero = () => {
         ease: "easeOut",
         delay: 0.3
       }} className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-center w-full justify-center items-center flex-col flex whitespace-pre leading-tight tracking-tight space-y-1 md:space-y-4 my-0">
-          <span>Make your </span>
+          <span>Make ysour </span>
           <LayoutGroup>
             <motion.span layout className="flex whitespace-pre">
               <motion.span layout className="flex whitespace-pre" transition={{
