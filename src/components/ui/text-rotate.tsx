@@ -1,3 +1,4 @@
+
 import {
   forwardRef,
   useCallback,
@@ -12,7 +13,7 @@ import {
   motion,
   MotionProps,
   Transition,
-} from "framer-motion/react"
+} from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -39,7 +40,7 @@ interface TextRotateProps {
 export interface TextRotateRef {
   next: () => void
   previous: () => void
-  jumpTo: () => void
+  jumpTo: (index: number) => void
   reset: () => void
 }
 
@@ -74,10 +75,15 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
   ) => {
     const [currentTextIndex, setCurrentTextIndex] = useState(0)
 
-    // handy function to split text into characters with support for unicode and emojis
+    // Split text into characters with support for unicode and emojis
     const splitIntoCharacters = (text: string): string[] => {
-      if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
+      // Use safer check for Intl.Segmenter
+      if (typeof Intl !== "undefined" && 
+          // @ts-ignore - Segmenter might not be recognized in all TS versions
+          typeof Intl.Segmenter === "function") {
+        // @ts-ignore - TypeScript doesn't recognize Segmenter in some environments
         const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" })
+        // @ts-ignore
         return Array.from(segmenter.segment(text), ({ segment }) => segment)
       }
       // Fallback for browsers that don't support Intl.Segmenter
@@ -113,7 +119,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
           const randomIndex = Math.floor(Math.random() * total)
           return Math.abs(randomIndex - index) * staggerDuration
         }
-        return Math.abs(staggerFrom - index) * staggerDuration
+        return Math.abs((staggerFrom as number) - index) * staggerDuration
       },
       [staggerFrom, staggerDuration]
     )
