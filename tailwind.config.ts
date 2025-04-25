@@ -116,7 +116,17 @@ export default {
         'shimmer': {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' }
-        }
+        },
+        "shimmer-slide": {
+          to: {
+            transform: "translateY(-50%)",
+          },
+        },
+        "spin-around": {
+          to: {
+            transform: "rotate(1turn)",
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -129,7 +139,9 @@ export default {
         'slide-out-right': 'slide-out-right 0.6s ease-out',
         'float': 'float 6s ease-in-out infinite',
         'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
-        'shimmer': 'shimmer 2s ease-in-out infinite'
+        'shimmer': 'shimmer 2s ease-in-out infinite',
+        "shimmer-slide": "shimmer-slide var(--speed) linear infinite",
+        "spin-around": "spin-around var(--speed) linear infinite",
       }
     }
   },
