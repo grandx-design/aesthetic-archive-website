@@ -1,43 +1,46 @@
-
 import { useState } from 'react';
 import { Mail, MessageSquare, Send } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import { GradientButton } from '@/components/ui/gradient-button';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: '',
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
       ...prev,
-      [name]: value,
+      [name]: value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message received",
-        description: "Thank you for reaching out! I'll get back to you soon.",
+        description: "Thank you for reaching out! I'll get back to you soon."
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
       setIsSubmitting(false);
     }, 1500);
   };
-
-  return (
-    <section id="contact" className="section-container">
+  return <section id="contact" className="section-container">
       <div className="max-w-5xl mx-auto">
         <div className="text-center animate-fade-in">
           <h2 className="section-title">Let's Connect</h2>
@@ -80,75 +83,10 @@ const Contact = () => {
           </div>
           
           <div className="md:col-span-3 animate-fade-in animate-delay-200">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-white/50 focus:ring-2 focus:ring-primary/10 focus:border-primary/30 outline-none transition-all"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-white/50 focus:ring-2 focus:ring-primary/10 focus:border-primary/30 outline-none transition-all"
-                  placeholder="Your email address"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-white/50 focus:ring-2 focus:ring-primary/10 focus:border-primary/30 outline-none transition-all"
-                  placeholder="Tell me about your project..."
-                  required
-                />
-              </div>
-              
-              <GradientButton
-                type="submit"
-                disabled={isSubmitting}
-                className="flex items-center justify-center"
-              >
-                {isSubmitting ? (
-                  'Sending...'
-                ) : (
-                  <>
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
-                  </>
-                )}
-              </GradientButton>
-            </form>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;

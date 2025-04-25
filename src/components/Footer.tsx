@@ -1,21 +1,17 @@
-
 import { ArrowUp, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
-
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
-
-  return (
-    <footer className="bg-secondary/30 py-12">
+  return <footer className="bg-secondary/30 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <p className="text-lg font-display font-bold">PORTFOLIO</p>
-            <p className="text-sm text-muted-foreground mt-1">Design & Development</p>
+            <p className="text-lg font-display font-bold mx-[62px]">GRANIT KOSUMI</p>
+            <p className="text-sm text-muted-foreground mt-1">Graphics and Motion Graphic Deisgner</p>
           </div>
           
           <div className="flex space-x-6 mb-6 md:mb-0">
@@ -33,11 +29,7 @@ const Footer = () => {
             </a>
           </div>
           
-          <button
-            onClick={scrollToTop}
-            className="outline-button flex items-center"
-            aria-label="Scroll to top"
-          >
+          <button onClick={scrollToTop} className="outline-button flex items-center" aria-label="Scroll to top">
             <ArrowUp className="mr-2 h-4 w-4" />
             Back to Top
           </button>
@@ -60,8 +52,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
