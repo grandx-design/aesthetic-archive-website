@@ -1,5 +1,4 @@
 import { Palette, Film, PenTool, Image, Brain, TrendingUp } from 'lucide-react';
-
 const About = () => {
   const skills = [{
     name: 'Graphic Design',
@@ -26,7 +25,6 @@ const About = () => {
     icon: TrendingUp,
     description: 'Planning and optimizing content for maximum impact and engagement'
   }];
-
   return <section id="about" className="section-container bg-secondary/30">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
         <div className="animate-fade-in">
@@ -38,26 +36,22 @@ const About = () => {
 Eqrem Çabej Philological High School | 2015 – 2018
 
 Bachelor of Arts – AAB College | 2022 – Present</p>
-            <p>Professional Experience
+            <p>Professional Experience 
 
-Graphic Designer – Ricoh | 2018 – 2021
 
-Created brand identities, packaging designs, websites, and print materials that strengthened brand presence and customer engagement.
+Graphic Designer – Ricoh | 2018 – 2021 
+Created brand identities, packaging designs, websites, and print materials that strengthened brand presence and customer engagement. Developed social media campaigns and email marketing designs aligned with brand strategies. 
 
-Developed social media campaigns and email marketing designs aligned with brand strategies.
 
 Video Editor – Bored Panda | 2021 – 2022
+Edited raw footage into polished, high-quality videos with an eye for detail, pacing, and visual storytelling. Maintained a consistent visual style across diverse projects and content formats. 
 
-Edited raw footage into polished, high-quality videos with an eye for detail, pacing, and visual storytelling.
-
-Maintained a consistent visual style across diverse projects and content formats.
 
 Video Editor & Content Planner – Jellysmack | 2022 – 2023
+Produced engaging Facebook videos designed to maximize viewer retention and shareability. Managed publishing schedules and optimized content based on audience engagement insights. 
 
-Produced engaging Facebook videos designed to maximize viewer retention and shareability. Managed publishing schedules and optimized content based on audience engagement insights.
 
-Motion Graphic Designer – Gorenje | 2023 – 2025
-
+Motion Graphic Designer – Gorenje | 2023 – 2025 
 Designed dynamic animations, video ads, and social media content for wide-scale marketing campaigns. Specialized in motion graphics that captivate audiences and elevate brand storytelling.</p>
             
             <div className="pt-4">
