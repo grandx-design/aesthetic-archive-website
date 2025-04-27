@@ -1,22 +1,32 @@
-import { Code, Layers, PenTool, Zap } from 'lucide-react';
+import { Palette, Film, PenTool, Image, Brain, TrendingUp } from 'lucide-react';
+
 const About = () => {
   const skills = [{
-    name: 'UI/UX Design',
+    name: 'Graphic Design',
+    icon: Palette,
+    description: 'Adobe Photoshop, Illustrator - Creating stunning visual designs and brand identities'
+  }, {
+    name: 'Video Editing',
+    icon: Film,
+    description: 'Adobe Premiere Pro - Crafting compelling visual narratives and professional video content'
+  }, {
+    name: 'Motion Graphics',
+    icon: Image,
+    description: 'Adobe After Effects - Designing dynamic animations and visual effects'
+  }, {
+    name: 'Visual Storytelling',
     icon: PenTool,
-    description: 'Creating intuitive and beautiful user interfaces that enhance user experience.'
+    description: 'Transforming concepts into engaging visual narratives'
   }, {
-    name: 'Web Development',
-    icon: Code,
-    description: 'Building responsive, performant websites using modern technologies.'
+    name: 'Creative Concept Development',
+    icon: Brain,
+    description: 'Generating innovative ideas and creative solutions'
   }, {
-    name: 'Visual Design',
-    icon: Layers,
-    description: 'Crafting visual identities and cohesive design systems for brands.'
-  }, {
-    name: 'Performance Optimization',
-    icon: Zap,
-    description: 'Improving site performance and user experience metrics.'
+    name: 'Content Strategy',
+    icon: TrendingUp,
+    description: 'Planning and optimizing content for maximum impact and engagement'
   }];
+
   return <section id="about" className="section-container bg-secondary/30">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
         <div className="animate-fade-in">
