@@ -1,21 +1,23 @@
 import { motion, LayoutGroup } from "framer-motion";
 import { TextRotate } from "@/components/ui/text-rotate";
 import Floating, { FloatingElement } from "@/components/ui/parallax-floating";
+const env = import.meta.env;
+
 const Hero = () => {
   const exampleImages = [{
-    url: "/placeholder.svg",
+    url: `${env.VITE_STATIC_ASSETS}/portofolio/header/0.png`,
     title: "Placeholder Image 1"
   }, {
-    url: "/placeholder.svg",
+    url: `${env.VITE_STATIC_ASSETS}/portofolio/header/1.png`,
     title: "Placeholder Image 2"
   }, {
-    url: "/placeholder.svg",
+    url: `${env.VITE_STATIC_ASSETS}/portofolio/header/2.png`,
     title: "Placeholder Image 3"
   }, {
-    url: "/placeholder.svg",
+    url: `${env.VITE_STATIC_ASSETS}/portofolio/header/3.png`,
     title: "Placeholder Image 4"
   }, {
-    url: "/placeholder.svg",
+    url: `${env.VITE_STATIC_ASSETS}/portofolio/header/4.png`,
     title: "Placeholder Image 5"
   }];
   return <section className="w-full h-screen overflow-hidden md:overflow-visible flex flex-col items-center justify-center relative">
