@@ -28,12 +28,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <a href="#" className="text-xl font-display font-bold tracking-tight">GRANIT KOSUMI
+            <a href="/" className="text-xl font-display font-bold tracking-tight">GRANIT KOSUMI
           </a>
           </div>
-          
+
           <nav className="hidden md:flex space-x-10">
-            <a href="#projects" className="text-sm font-medium hover:text-primary/70 transition-colors">
+            <a href="projects" className="text-sm font-medium hover:text-primary/70 transition-colors">
               Projects
             </a>
             <a href="#about" className="text-sm font-medium hover:text-primary/70 transition-colors">
@@ -43,13 +43,13 @@ const Navbar = () => {
               Contact
             </a>
           </nav>
-          
+
           <div className="hidden md:block">
             <a href="#contact">
               <ShimmerButton>Get in Touch</ShimmerButton>
             </a>
           </div>
-          
+
           <div className="md:hidden">
             <button type="button" className="text-gray-700 hover:text-gray-900 focus:outline-none" onClick={toggleMenu}>
               {isMenuOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
@@ -57,10 +57,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      
+
       {isMenuOpen && <div className="md:hidden glass animate-fade-in absolute top-full left-0 w-full">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-            <a href="#projects" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/5 transition-colors" onClick={toggleMenu}>
+            <a href="projects" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/5 transition-colors" onClick={toggleMenu}>
               Projects
             </a>
             <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/5 transition-colors" onClick={toggleMenu}>
