@@ -14,13 +14,15 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative w-full h-screen overflow-hidden flex justify-center items-center">
-      {/* Floating images (absolutely positioned background) */}
+    // 1) allow overflow on mobile by using overflow-visible
+    // 2) use min-h-screen so the section can grow if needed
+    <section className="relative w-full min-h-screen overflow-visible flex justify-center items-center">
+      {/* Floating images (absolutely positioned beyond the normal flow) */}
       <Floating
         sensitivity={-0.5}
         className="absolute inset-0 w-full h-full z-0 pointer-events-none"
       >
-        <FloatingElement depth={0.5} className="top-[25%] left-[2%] md:top-[45%] md:left-[15%]">
+        <FloatingElement depth={0.5} className="top-[15%] left-[2%] md:top-[35%] md:left-[5%]">
           <motion.img
             src={exampleImages[0].url}
             alt={exampleImages[0].title}
@@ -31,7 +33,7 @@ const Hero = () => {
           />
         </FloatingElement>
 
-        <FloatingElement depth={1} className="top-[0%] left-[8%] md:top-[16%] md:left-[15%]">
+        <FloatingElement depth={1} className="top-[0%] left-[8%] md:top-[10%] md:left-[11%]">
           <motion.img
             src={exampleImages[1].url}
             alt={exampleImages[1].title}
@@ -42,7 +44,7 @@ const Hero = () => {
           />
         </FloatingElement>
 
-        <FloatingElement depth={4} className="top-[90%] left-[6%] md:top-[70%] md:left-[18%]">
+        <FloatingElement depth={4} className="top-[90%] left-[6%] md:top-[50%] md:left-[8%]">
           <motion.img
             src={exampleImages[2].url}
             alt={exampleImages[2].title}
@@ -53,7 +55,7 @@ const Hero = () => {
           />
         </FloatingElement>
 
-        <FloatingElement depth={2} className="top-[0%] left-[87%] md:top-[12%] md:left-[79%]">
+        <FloatingElement depth={2} className="top-[0%] left-[87%] md:top-[15%] md:left-[75%]">
           <motion.img
             src={exampleImages[3].url}
             alt={exampleImages[3].title}
@@ -64,7 +66,7 @@ const Hero = () => {
           />
         </FloatingElement>
 
-        <FloatingElement depth={1} className="top-[48%] left-[83%] md:top-[48%] md:left-[79%]">
+        <FloatingElement depth={1} className="top-[78%] left-[53%] md:top-[48%] md:left-[75%]">
           <motion.img
             src={exampleImages[4].url}
             alt={exampleImages[4].title}
@@ -82,7 +84,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
-          className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-center leading-tight tracking-tight"
+          className="text-5xl sm:text-5xl md:text-8xl lg:text-9xl text-center leading-tight tracking-tight"
         >
           <span>Make your </span>
           <LayoutGroup>
@@ -108,7 +110,7 @@ const Hero = () => {
                   "pop ✨",
                   "rock 🤘",
                 ]}
-                mainClassName="overflow-hidden pr-3 text-primary py-0 pb-2 md:pb-4 rounded-xl"
+                mainClassName="overflow-hidden pr-2 text-primary py-0 pb-2 md:pb-4 rounded-xl"
                 staggerDuration={0.03}
                 staggerFrom="last"
                 rotationInterval={3000}
@@ -124,7 +126,7 @@ const Hero = () => {
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.5 }}
           className="mt-4 text-base sm:text-lg md:text-xl text-center text-muted-foreground"
         >
-          {/* Optional subtitle here */}
+          {/* Optional subtitle */}
         </motion.p>
       </div>
 
