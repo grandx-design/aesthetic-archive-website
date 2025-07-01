@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden md:flex space-x-10">
-            <a href="projects" className="text-sm font-medium hover:text-primary/70 transition-colors">
+            <a href="/projects" className="text-sm font-medium hover:text-primary/70 transition-colors">
               Projects
             </a>
             <a href="#about" className="text-sm font-medium hover:text-primary/70 transition-colors">
@@ -60,7 +60,7 @@ const Navbar = () => {
 
       {isMenuOpen && <div className="md:hidden glass animate-fade-in absolute top-full left-0 w-full">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-            <a href="projects" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/5 transition-colors" onClick={toggleMenu}>
+            <a href="/projects" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/5 transition-colors" onClick={toggleMenu}>
               Projects
             </a>
             <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/5 transition-colors" onClick={toggleMenu}>
